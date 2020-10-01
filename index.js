@@ -32,10 +32,20 @@ console.log(processFirstItem(stringListExample, callBackExample)); //test
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 utilizes a closure. counter2 does not utilize a closure. As a result, the "count" variable in 
+ * counter1 has block level scope within the function counterMaker(). This means that "count" 
+ * cannot be accessed outside of counterMaker(). counter2's "count" variable has a global scope and can be 
+ * accessed throughout the code. counter1 restricts access to manipulate "count" to counter1() calls. 
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * counter1 utilizes a closure. You can tell it uses a closure because it returns a 2nd function. 
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * 
+ * counter1 would be preferable if you want to restrict access (enable data privacy) to the variable 
+ * within counterMaker(). counter2 would be preferable if you need a common variable (global scope) that 
+ * other functions/your program can manipulate. 
 */
 
 // counter1 code
