@@ -18,6 +18,10 @@ function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
 
+const stringListExample = ['foo', 'bar'];
+const callBackExample = (str) => str + str;
+console.log(processFirstItem(stringListExample, callBackExample)); //test
+
 // ⭐️ Example Challenge END ⭐️
 
 
