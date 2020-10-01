@@ -42,6 +42,14 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+A closure is a function and its lexical environment (the variables that it uses that are in scope). To use a closure: 
+  1. Write a function that returns a 2nd function.
+  2. Invoke the 1st function to return the 2nd function, and store that in a new variable. 
+  3. Now invoke that new variable to invoke the 2nd function. 
+
+A closure is a function that has access to its outer function scope even after the outer function has returned. This means a closure can remember and access variables and arguments of its outer function even after the function has finished.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +71,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+Closure is used by the inner function (function inside personalDice(name)) when the parameter of "name" is referenced. You can tell because the parameter "name" is not in the global scope. It is in the block level scope of the function personalDice(name). Each time the inner function is run by calling dansRoll() the inner function needs to go outside of its scope to define "name" (which is a parameter in the personalDice(name) function). 
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The "name" parameter stays the same. "newRoll" could change each time as the inner function is called everytime "dansRoll()" is called. 
+
 c. What is the lexical scope of `newRoll`? 
+
+"newRoll" has access to "name" as it is within personalDice(name) (block level scope) as well as the global scope. 
 
 ### Task 3 - Stretch Goals
 
