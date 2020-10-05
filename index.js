@@ -70,20 +70,15 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(team){
-  return function(){
+function inning(){ //I removed the parameter, not sure why I would need a parameter for this or how it would be useful? 
     //generates random, whole number between 0 and 2
-    const points = Math.floor(Math.random()*3);
-    console.log(`${team} scored ${points} points this inning.`);
-  }
+    return Math.floor(Math.random()*3);
 }
 
-const homeTeamInningScore = inning("Brewers"); //test
-
-homeTeamInningScore(); //test
-homeTeamInningScore(); //test
-homeTeamInningScore(); //test
-homeTeamInningScore(); //test
+console.log(inning()); //test
+console.log(inning()); //test
+console.log(inning()); //test
+console.log(inning()); //test
 
 /* Task 3: finalScore()
 
@@ -99,11 +94,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(callBackFunction, numberOfInnings){
+  let home = 0;
+  let away = 0;
 
-  /*Code Here*/
-
+  for(let i = 0; i < numberOfInnings; i++){
+    home = home + callBackFunction();
+    away = away + callBackFunction();
+  }
+  return {
+    "Home": home,
+    "Away": away
+  }
 }
+
+console.log(finalScore(inning, 9)); //test
 
 /* Task 4: 
 
