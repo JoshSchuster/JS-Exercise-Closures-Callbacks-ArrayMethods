@@ -139,18 +139,19 @@ function scoreboard(getInningScore, inning, innings) {
   
   for (let i = 0; i < innings; i++){
     inningScore = getInningScore(inning, 1);
-    if(i === 0){
+    if(i === 0){ //1st inning
       console.log(`${i+1}st inning: ${inningScore.Away+awayScore} - ${inningScore.Home+homeScore}`);
-    }else if(i === 1){
+    }else if(i === 1){ //2nd inning
       console.log(`${i+1}nd inning: ${inningScore.Away+awayScore} - ${inningScore.Home+homeScore}`);
-    }else if(i === 2){
+    }else if(i === 2){ //3rd inning
       console.log(`${i+1}rd inning: ${inningScore.Away+awayScore} - ${inningScore.Home+homeScore}`);
-    }else{
+    }else{ //4th inning and beyond
       console.log(`${i+1}th inning: ${inningScore.Away+awayScore} - ${inningScore.Home+homeScore}`);
     }
     awayScore += inningScore.Away;
     homeScore += inningScore.Home;
   }
+  console.log(""); //space
   console.log("Final Score: " + awayScore + " - " + homeScore);
 }
 
